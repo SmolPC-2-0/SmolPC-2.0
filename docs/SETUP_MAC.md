@@ -98,7 +98,7 @@ bash
 mkdir -p ~/Library/Application\ Support/LibreOffice/4/user/Scripts/python
 
 # Copy helper files
-cp apps/libreoffice/helper*.py ~/Library/Application\ Support/LibreOffice/4/user/Scripts/python/
+cp adapters/libreoffice/helper*.py ~/Library/Application\ Support/LibreOffice/4/user/Scripts/python/
 
 # Rename main helper file
 mv ~/Library/Application\ Support/LibreOffice/4/user/Scripts/python/helper.py \
@@ -234,9 +234,9 @@ json
     "libreoffice": {
       "command": "/Users/YOUR_USERNAME/SmolPC-2.0/venv/bin/python3",
       "args": [
-        "/Users/YOUR_USERNAME/SmolPC-2.0/apps/libreoffice/libre.py"
+        "/Users/YOUR_USERNAME/SmolPC-2.0/adapters/libreoffice/libre.py"
       ],
-      "cwd": "/Users/YOUR_USERNAME/SmolPC-2.0/apps/libreoffice"
+      "cwd": "/Users/YOUR_USERNAME/SmolPC-2.0/adapters/libreoffice"
     }
   }
 }
