@@ -1,0 +1,296 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Page
+    x:Class="LibreOfficeAI.Views.SettingsPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:local="using:LibreOfficeAI.Views"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d">
+
+    <Grid x:Name="RootGrid">
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="*" />
+                <RowDefinition Height="Auto" />
+            </Grid.RowDefinitions>
+
+
+            <!--  Top bar  -->
+            <Grid
+                Grid.Row="0"
+                Margin="0,0,0,0"
+                VerticalAlignment="Top">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="Auto" />
+                </Grid.ColumnDefinitions>
+                <StackPanel
+                    Margin="24,24,0,0"
+                    VerticalAlignment="Top"
+                    Orientation="Horizontal"
+                    Spacing="16">
+                    <!--  Back Button  -->
+                    <Button
+                        Width="40"
+                        Height="40"
+                        Padding="0"
+                        Background="{ThemeResource ButtonBackgroundBrush}"
+                        BorderThickness="0"
+                        Command="{x:Bind ViewModel.BackButton_ClickCommand}"
+                        CornerRadius="40"
+                        ToolTipService.ToolTip="Settings">
+                        <Button.Resources>
+                            <SolidColorBrush x:Key="ButtonBackgroundPointerOver" Color="{ThemeResource ButtonHoverColor}" />
+                        </Button.Resources>
+                        <FontIcon Glyph="&#xE72B;" />
+                    </Button>
+                </StackPanel>
+            </Grid>
+
+            <!--  Main Settings with ScrollViewer  -->
+            <ScrollViewer
+                Grid.Row="1"
+                VerticalScrollBarVisibility="Auto"
+                VerticalScrollMode="Auto">
+                <StackPanel
+                    Margin="100,40,100,40"
+                    HorizontalAlignment="Left"
+                    Spacing="32">
+
+                    <!--  Documents Folder  -->
+                    <StackPanel>
+                        <StackPanel
+                            Margin="0,0,0,8"
+                            VerticalAlignment="Center"
+                            Orientation="Horizontal">
+                            <TextBlock
+                                Margin="0,2,0,0"
+                                FontWeight="Bold"
+                                Text="Documents Folder" />
+                            <Button
+                                x:Name="DocumentsFolderInfoButton"
+                                Width="25"
+                                Height="25"
+                                Margin="8,0"
+                                Padding="0"
+                                Background="{ThemeResource ButtonBackgroundBrush}"
+                                BorderThickness="0"
+                                Click="Info_Click"
+                                CornerRadius="40"
+                                Tag="DocumentsFolderInfoTeachingTip"
+                                ToolTipService.ToolTip="Settings">
+                                <Button.Resources>
+                                    <SolidColorBrush x:Key="ButtonBackgroundPointerOver" Color="{ThemeResource ButtonHoverColor}" />
+                                </Button.Resources>
+                                <FontIcon
+                                    FontSize="18"
+                                    Foreground="{ThemeResource InfoIconBrush}"
+                                    Glyph="&#xE946;" />
+                            </Button>
+                            <TeachingTip
+                                x:Name="DocumentsFolderInfoTeachingTip"
+                                Title="Documents Folder"
+                                IsLightDismissEnabled="True"
+                                PreferredPlacement="RightTop"
+                                Subtitle="The main folder that documents will be accessed from and stored to." />
+                        </StackPanel>
+                        <Grid Margin="0,0,0,10" VerticalAlignment="Top">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="Auto" />
+                                <ColumnDefinition Width="Auto" />
+                            </Grid.ColumnDefinitions>
+                            <TextBox
+                                Grid.Column="0"
+                                Width="500"
+                                Height="32"
+                                VerticalAlignment="Center"
+                                IsReadOnly="True"
+                                Text="{x:Bind ViewModel.DocumentsPath, Mode=TwoWay}" />
+                            <Button
+                                x:Name="PickDocumentsFolderButton"
+                                Grid.Column="1"
+                                Height="32"
+                                Margin="8,0,0,0"
+                                VerticalAlignment="Center"
+                                Click="PickFolderButton_Click"
+                                Content="Change folder" />
+                        </Grid>
+                    </StackPanel>
+
+
+
+                    <!--  Model Selection  -->
+                    <StackPanel HorizontalAlignment="Left">
+                        <StackPanel
+                            Margin="0,0,0,8"
+                            VerticalAlignment="Center"
+                            Orientation="Horizontal">
+                            <TextBlock FontWeight="Bold" Text="AI Model" />
+                            <Button
+                                x:Name="AIModelInfoButton"
+                                Width="25"
+                                Height="25"
+                                Margin="8,0"
+                                Padding="0"
+                                Background="{ThemeResource ButtonBackgroundBrush}"
+                                BorderThickness="0"
+                                Click="Info_Click"
+                                CornerRadius="40"
+                                Tag="AIModelInfoTeachingTip"
+                                ToolTipService.ToolTip="Settings">
+                                <Button.Resources>
+                                    <SolidColorBrush x:Key="ButtonBackgroundPointerOver" Color="{ThemeResource ButtonHoverColor}" />
+                                </Button.Resources>
+                                <FontIcon
+                                    FontSize="18"
+                                    Foreground="{ThemeResource InfoIconBrush}"
+                                    Glyph="&#xE946;" />
+                            </Button>
+                            <TeachingTip
+                                x:Name="AIModelInfoTeachingTip"
+                                Title="AI Model"
+                                IsLightDismissEnabled="True"
+                                PreferredPlacement="Right">
+                                <TeachingTip.Content>
+                                    <RichTextBlock>
+                                        <Paragraph>
+                                            <Run Text="The AI model currently being used." />
+                                            <Run Text="You can replace this with any model hosted by Ollama that supports tool calling -" />
+                                            <Hyperlink Click="OnTeachingTipLinkClick" NavigateUri="https://ollama.com/search?c=tools">
+                                                <Run Text="Find models here." />
+                                            </Hyperlink>
+                                            <Run Text="⚠️ Please note changing the AI model may have a significant effect on performance. Do not change this setting unless you are confident your hardware is sufficiently powerful." />
+                                        </Paragraph>
+                                    </RichTextBlock>
+                                </TeachingTip.Content>
+                            </TeachingTip>
+
+
+                        </StackPanel>
+                        <TextBox
+                            Width="500"
+                            Height="32"
+                            PlaceholderText="Select a model"
+                            Text="{x:Bind ViewModel.SelectedModel, Mode=TwoWay}" />
+                    </StackPanel>
+
+                    <!--  Presentation Templates Folders  -->
+                    <StackPanel HorizontalAlignment="Left">
+                        <StackPanel
+                            Margin="0,0,0,8"
+                            VerticalAlignment="Center"
+                            Orientation="Horizontal">
+                            <TextBlock
+                                Margin="0,2,0,0"
+                                FontWeight="Bold"
+                                Text="Presentation Templates Folders" />
+                            <Button
+                                x:Name="PresentationTemplatesInfoButton"
+                                Width="25"
+                                Height="25"
+                                Margin="8,0"
+                                Padding="0"
+                                Background="{ThemeResource ButtonBackgroundBrush}"
+                                BorderThickness="0"
+                                Click="Info_Click"
+                                CornerRadius="40"
+                                Tag="PresentationTemplatesInfoTeachingTip"
+                                ToolTipService.ToolTip="Settings">
+                                <Button.Resources>
+                                    <SolidColorBrush x:Key="ButtonBackgroundPointerOver" Color="{ThemeResource ButtonHoverColor}" />
+                                </Button.Resources>
+                                <FontIcon
+                                    FontSize="18"
+                                    Foreground="{ThemeResource InfoIconBrush}"
+                                    Glyph="&#xE946;" />
+                            </Button>
+                            <TeachingTip
+                                x:Name="PresentationTemplatesInfoTeachingTip"
+                                Title="Presentation Template Folders"
+                                IsLightDismissEnabled="True"
+                                PreferredPlacement="Right"
+                                Subtitle="The folders that the AI will search for Impress presentation templates." />
+                        </StackPanel>
+
+
+                        <Grid Margin="0,0,0,10" VerticalAlignment="Top">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="*" />
+                                <ColumnDefinition Width="Auto" />
+                            </Grid.ColumnDefinitions>
+                            <!--  Presentation Template Folders  -->
+                            <StackPanel Orientation="Vertical">
+                                <ItemsControl ItemsSource="{x:Bind ViewModel.DefaultPresentationTemplatesPaths}">
+                                    <ItemsControl.ItemTemplate>
+                                        <DataTemplate x:DataType="x:String">
+                                            <StackPanel Margin="0,2,0,2" Orientation="Horizontal">
+                                                <TextBox
+                                                    Width="420"
+                                                    IsReadOnly="True"
+                                                    Text="{x:Bind}" />
+                                            </StackPanel>
+                                        </DataTemplate>
+                                    </ItemsControl.ItemTemplate>
+                                </ItemsControl>
+
+                                <ItemsControl ItemsSource="{x:Bind ViewModel.AddedPresentationTemplatesPaths}">
+                                    <ItemsControl.ItemTemplate>
+                                        <DataTemplate x:DataType="x:String">
+                                            <StackPanel Margin="0,2,0,2" Orientation="Horizontal">
+                                                <TextBox
+                                                    Width="420"
+                                                    IsReadOnly="True"
+                                                    Text="{x:Bind}" />
+                                                <Button
+                                                    Margin="8,0,0,0"
+                                                    Click="RemovePath_Click"
+                                                    Tag="{x:Bind}">
+                                                    <FontIcon
+                                                        FontSize="14"
+                                                        Foreground="DarkBlue"
+                                                        Glyph="&#xE74D;" />
+                                                </Button>
+                                            </StackPanel>
+                                        </DataTemplate>
+                                    </ItemsControl.ItemTemplate>
+                                </ItemsControl>
+                            </StackPanel>
+                            <Button
+                                x:Name="PickTemplatesFolderButton"
+                                Grid.Column="1"
+                                Height="32"
+                                Margin="8,0,0,0"
+                                VerticalAlignment="Center"
+                                Click="PickFolderButton_Click"
+                                Content="Add folder" />
+                        </Grid>
+
+                    </StackPanel>
+
+                    <StackPanel Orientation="Horizontal">
+                        <!--  Save Button  -->
+                        <Button
+                            Width="120"
+                            Margin="0,16,0,0"
+                            HorizontalAlignment="Left"
+                            Command="{x:Bind ViewModel.SaveCommand}"
+                            Content="Save" />
+                        <!--  Reset Defaults Button  -->
+                        <Button
+                            Width="120"
+                            Margin="16,16,0,0"
+                            HorizontalAlignment="Left"
+                            Command="{x:Bind ViewModel.ResetDefaultsCommand}"
+                            Content="Reset Defaults" />
+                    </StackPanel>
+                    <TextBlock Text="{Binding SettingsChangedMessage}" Visibility="{Binding SettingsChangedMessage, Converter={StaticResource StringVisibilityConverter}}" />
+
+                </StackPanel>
+            </ScrollViewer>
+
+        </Grid>
+
+    </Grid>
+</Page>

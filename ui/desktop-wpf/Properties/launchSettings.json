@@ -1,0 +1,10 @@
+{
+  "profiles": {
+    "LibreOfficeAI (Package)": {
+      "commandName": "MsixPackage"
+    },
+    "LibreOfficeAI (Unpackaged)": {
+      "commandName": "Project"
+    }
+  }
+}

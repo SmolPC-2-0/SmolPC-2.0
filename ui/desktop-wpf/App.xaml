@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Application
+    x:Class="LibreOfficeAI.App"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:converters="using:CommunityToolkit.WinUI.Converters"
+    xmlns:local="using:LibreOfficeAI">
+    <Application.Resources>
+        <ResourceDictionary>
+            <!--  Move property elements (ThemeDictionaries) before other content  -->
+            <ResourceDictionary.ThemeDictionaries>
+                <ResourceDictionary x:Key="Light">
+                    <Color x:Key="MainBackgroundColor">#F2F6FA</Color>
+                    <Color x:Key="ButtonBackgroundColor">white</Color>
+                    <Color x:Key="ButtonHoverColor">#f2f2f2</Color>
+                    <Color x:Key="UserMessageBackgroundColor">white</Color>
+                    <Color x:Key="AIMessageBackgroundColor">#d9dbf5</Color>
+                    <Color x:Key="ErrorMessageBackgroundColor">red</Color>
+                    <Color x:Key="WelcomeMessageBackgroundColor">magenta</Color>
+                    <Color x:Key="ChatBoxBackgroundColor">white</Color>
+                    <Color x:Key="LoadingTextColor">#666666</Color>
+                    <Color x:Key="RecordingEllipseColor">#33FF0000</Color>
+                    <Color x:Key="InfoIconColor">#3767a8</Color>
+                    <Color x:Key="HelpItalicsColor">gray</Color>
+                    <AcrylicBrush
+                        x:Key="LibreOfficeLogoBackgroundBrush"
+                        FallbackColor="#f2f2f2"
+                        TintColor="#f2f2f2"
+                        TintLuminosityOpacity="1"
+                        TintOpacity="1" />
+                </ResourceDictionary>
+                <ResourceDictionary x:Key="Dark">
+                    <Color x:Key="MainBackgroundColor">#092642</Color>
+                    <Color x:Key="ButtonBackgroundColor">#174276</Color>
+                    <Color x:Key="ButtonHoverColor">#235a9f</Color>
+                    <Color x:Key="UserMessageBackgroundColor">#533f54</Color>
+                    <Color x:Key="AIMessageBackgroundColor">#6266e2</Color>
+                    <Color x:Key="ErrorMessageBackgroundColor">red</Color>
+                    <Color x:Key="WelcomeMessageBackgroundColor">magenta</Color>
+                    <Color x:Key="ChatBoxBackgroundColor">#323232</Color>
+                    <Color x:Key="LoadingTextColor">#666666</Color>
+                    <Color x:Key="RecordingEllipseColor">#99FF0000</Color>
+                    <Color x:Key="InfoIconColor">white</Color>
+                    <Color x:Key="HelpItalicsColor">lightgray</Color>
+                    <AcrylicBrush
+                        x:Key="LibreOfficeLogoBackgroundBrush"
+                        FallbackColor="#0a3051"
+                        TintColor="#0078d4"
+                        TintLuminosityOpacity="0.1"
+                        TintOpacity="0.5" />
+                </ResourceDictionary>
+            </ResourceDictionary.ThemeDictionaries>
+            <ResourceDictionary.MergedDictionaries>
+                <XamlControlsResources xmlns="using:Microsoft.UI.Xaml.Controls" />
+                <!--  Other merged dictionaries here  -->
+            </ResourceDictionary.MergedDictionaries>
+            <!--  Move property elements (converters) before other content  -->
+            <converters:BoolNegationConverter x:Key="BoolNegationConverter" />
+            <converters:BoolToVisibilityConverter x:Key="BoolToVisibilityConverter" />
+            <converters:StringVisibilityConverter x:Key="StringVisibilityConverter" />
+            <converters:DoubleToVisibilityConverter x:Key="DoubleToVisibilityConverter" GreaterThan="0" />
+            <!--  Other app resources here  -->
+            <SolidColorBrush x:Key="MainBackgroundBrush" Color="{ThemeResource MainBackgroundColor}" />
+            <SolidColorBrush x:Key="ButtonBackgroundBrush" Color="{ThemeResource ButtonBackgroundColor}" />
+            <SolidColorBrush x:Key="ButtonHoverBrush" Color="{ThemeResource ButtonHoverColor}" />
+            <SolidColorBrush x:Key="UserMessageBackgroundBrush" Color="{ThemeResource UserMessageBackgroundColor}" />
+            <SolidColorBrush x:Key="AIMessageBackgroundBrush" Color="{ThemeResource AIMessageBackgroundColor}" />
+            <SolidColorBrush x:Key="ErrorMessageBackgroundBrush" Color="{ThemeResource ErrorMessageBackgroundColor}" />
+            <SolidColorBrush x:Key="WelcomeMessageBackgroundBrush" Color="{ThemeResource WelcomeMessageBackgroundColor}" />
+            <SolidColorBrush x:Key="ChatBoxBackgroundBrush" Color="{ThemeResource ChatBoxBackgroundColor}" />
+            <SolidColorBrush x:Key="LoadingTextBrush" Color="{ThemeResource LoadingTextColor}" />
+            <SolidColorBrush x:Key="RecordingEllipseBrush" Color="{ThemeResource RecordingEllipseColor}" />
+            <SolidColorBrush x:Key="InfoIconBrush" Color="{ThemeResource InfoIconColor}" />
+            <SolidColorBrush x:Key="HelpItalicsBrush" Color="{ThemeResource HelpItalicsColor}" />
+        </ResourceDictionary>
+    </Application.Resources>
+</Application>

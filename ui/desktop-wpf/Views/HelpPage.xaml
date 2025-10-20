@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Page
+    x:Class="LibreOfficeAI.Views.HelpPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:local="using:LibreOfficeAI.Views"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d">
+    <Page.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="ms-appx:///Views/HelpContent.xaml" />
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    </Page.Resources>
+
+    <Grid>
+        <Grid x:Name="RootGrid">
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="*" />
+                    <RowDefinition Height="Auto" />
+                </Grid.RowDefinitions>
+
+
+                <!--  Top bar  -->
+                <Grid
+                    Grid.Row="0"
+                    Margin="0,0,0,0"
+                    VerticalAlignment="Top">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*" />
+                        <ColumnDefinition Width="Auto" />
+                    </Grid.ColumnDefinitions>
+                    <StackPanel
+                        Margin="24,24,0,0"
+                        VerticalAlignment="Top"
+                        Orientation="Horizontal"
+                        Spacing="16">
+                        <!--  Back Button  -->
+                        <Button
+                            Width="40"
+                            Height="40"
+                            Padding="0"
+                            Background="{ThemeResource ButtonBackgroundBrush}"
+                            BorderThickness="0"
+                            Command="{x:Bind ViewModel.BackButton_ClickCommand}"
+                            CornerRadius="40"
+                            ToolTipService.ToolTip="Settings">
+                            <Button.Resources>
+                                <SolidColorBrush x:Key="ButtonBackgroundPointerOver" Color="{ThemeResource ButtonHoverColor}" />
+                            </Button.Resources>
+                            <FontIcon Glyph="&#xE72B;" />
+                        </Button>
+                    </StackPanel>
+                </Grid>
+
+                <!--  Main content  -->
+
+                <SplitView
+                    x:Name="splitView"
+                    Grid.Row="1"
+                    Margin="0,8,0,0"
+                    CompactPaneLength="48"
+                    DisplayMode="Inline"
+                    IsPaneOpen="True"
+                    OpenPaneLength="200"
+                    PaneBackground="{ThemeResource MainBackgroundBrush}">
+                    <SplitView.Pane>
+                        <Grid>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="Auto" />
+                                <RowDefinition Height="*" />
+                                <RowDefinition Height="Auto" />
+                            </Grid.RowDefinitions>
+                            <ListView
+                                x:Name="NavLinksList"
+                                Grid.Row="1"
+                                Margin="0,12,0,0"
+                                VerticalAlignment="Stretch"
+                                IsItemClickEnabled="True"
+                                ItemClick="NavLinksList_ItemClick"
+                                ItemsSource="{x:Bind ViewModel.NavLinks}"
+                                SelectionMode="Single">
+                                <ListView.ItemTemplate>
+                                    <DataTemplate>
+                                        <TextBlock VerticalAlignment="Center" Text="{Binding Label}" />
+                                    </DataTemplate>
+                                </ListView.ItemTemplate>
+                            </ListView>
+                        </Grid>
+                    </SplitView.Pane>
+
+                    <Grid>
+                        <ScrollViewer VerticalScrollBarVisibility="Auto">
+                            <ContentPresenter x:Name="ContentHost" />
+                        </ScrollViewer>
+                    </Grid>
+                </SplitView>
+
+
+            </Grid>
+        </Grid>
+    </Grid>
+</Page>

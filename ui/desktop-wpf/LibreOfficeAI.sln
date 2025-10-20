@@ -1,0 +1,51 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.14.36212.18
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LibreOfficeAI", "LibreOfficeAI.csproj", "{3D899471-E79B-4B4B-B65B-A963D6BDE86E}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Debug|ARM64 = Debug|ARM64
+		Debug|x64 = Debug|x64
+		Debug|x86 = Debug|x86
+		Release|Any CPU = Release|Any CPU
+		Release|ARM64 = Release|ARM64
+		Release|x64 = Release|x64
+		Release|x86 = Release|x86
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{3D899471-E79B-4B4B-B65B-A963D6BDE86E}.Debug|Any CPU.ActiveCfg = Debug|x64
+		{3D899471-E79B-4B4B-B65B-A963D6BDE86E}.Debug|Any CPU.Build.0 = Debug|x64
+		{3D899471-E79B-4B4B-B65B-A963D6BDE86E}.Debug|Any CPU.Deploy.0 = Debug|x64
+		{3D899471-E79B-4B4B-B65B-A963D6BDE86E}.Debug|ARM64.ActiveCfg = Debug|ARM64
+		{3D899471-E79B-4B4B-B65B-A963D6BDE86E}.Debug|ARM64.Build.0 = Debug|ARM64
+		{3D899471-E79B-4B4B-B65B-A963D6BDE86E}.Debug|ARM64.Deploy.0 = Debug|ARM64
+		{3D899471-E79B-4B4B-B65B-A963D6BDE86E}.Debug|x64.ActiveCfg = Debug|x64
+		{3D899471-E79B-4B4B-B65B-A963D6BDE86E}.Debug|x64.Build.0 = Debug|x64
+		{3D899471-E79B-4B4B-B65B-A963D6BDE86E}.Debug|x64.Deploy.0 = Debug|x64
+		{3D899471-E79B-4B4B-B65B-A963D6BDE86E}.Debug|x86.ActiveCfg = Debug|x86
+		{3D899471-E79B-4B4B-B65B-A963D6BDE86E}.Debug|x86.Build.0 = Debug|x86
+		{3D899471-E79B-4B4B-B65B-A963D6BDE86E}.Debug|x86.Deploy.0 = Debug|x86
+		{3D899471-E79B-4B4B-B65B-A963D6BDE86E}.Release|Any CPU.ActiveCfg = Release|x64
+		{3D899471-E79B-4B4B-B65B-A963D6BDE86E}.Release|Any CPU.Build.0 = Release|x64
+		{3D899471-E79B-4B4B-B65B-A963D6BDE86E}.Release|Any CPU.Deploy.0 = Release|x64
+		{3D899471-E79B-4B4B-B65B-A963D6BDE86E}.Release|ARM64.ActiveCfg = Release|ARM64
+		{3D899471-E79B-4B4B-B65B-A963D6BDE86E}.Release|ARM64.Build.0 = Release|ARM64
+		{3D899471-E79B-4B4B-B65B-A963D6BDE86E}.Release|ARM64.Deploy.0 = Release|ARM64
+		{3D899471-E79B-4B4B-B65B-A963D6BDE86E}.Release|x64.ActiveCfg = Release|x64
+		{3D899471-E79B-4B4B-B65B-A963D6BDE86E}.Release|x64.Build.0 = Release|x64
+		{3D899471-E79B-4B4B-B65B-A963D6BDE86E}.Release|x64.Deploy.0 = Release|x64
+		{3D899471-E79B-4B4B-B65B-A963D6BDE86E}.Release|x86.ActiveCfg = Release|x86
+		{3D899471-E79B-4B4B-B65B-A963D6BDE86E}.Release|x86.Build.0 = Release|x86
+		{3D899471-E79B-4B4B-B65B-A963D6BDE86E}.Release|x86.Deploy.0 = Release|x86
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {40C8389C-1A45-4898-9899-74FB709F2BC9}
+	EndGlobalSection
+EndGlobal

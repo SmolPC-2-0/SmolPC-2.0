@@ -1,0 +1,8 @@
+{
+  "mcpServers": {
+    "libreoffice-server": {
+      "command": "C:\\Users\\ben_t\\source\\repos\\LibreOfficeAI\\MCPServer\\main.exe",
+      "args": []
+    }
+  }
+}

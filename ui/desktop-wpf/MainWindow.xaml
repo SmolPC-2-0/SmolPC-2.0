@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Window
+    x:Class="LibreOfficeAI.MainWindow"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:local="using:LibreOfficeAI"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:models="using:LibreOfficeAI.Models"
+    Title="AI Assistant for LibreOffice"
+    mc:Ignorable="d">
+
+    <Window.SystemBackdrop>
+        <MicaBackdrop />
+    </Window.SystemBackdrop>
+
+    <Grid
+        x:Name="MainGrid"
+        Background="{ThemeResource MainBackgroundBrush}"
+        KeyboardAcceleratorPlacementMode="Hidden">
+        <Grid.KeyboardAccelerators>
+            <KeyboardAccelerator
+                Key="Space"
+                Invoked="SpaceAccelerator_Invoked"
+                ScopeOwner="{x:Bind MainGrid}" />
+        </Grid.KeyboardAccelerators>
+        <Frame x:Name="MainFrame" />
+    </Grid>
+</Window>

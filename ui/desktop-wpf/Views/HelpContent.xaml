@@ -1,0 +1,831 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ResourceDictionary
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:LibreOfficeAI.Views">
+
+    <DataTemplate x:Key="HelpContentTemplate">
+        <StackPanel Padding="40,0,80,40">
+
+            <RichTextBlock Margin="0,0,0,10" FontSize="18">
+                <Paragraph Margin="0,0,0,16">
+                    <Run>This application connects to LibreOffice to make and edit documents and presentations for you.</Run>
+                </Paragraph>
+                <Paragraph Margin="0,0,0,16">
+                    <Run>To use it, simply send it a message with your request!</Run>
+                </Paragraph>
+            </RichTextBlock>
+
+            <RichTextBlock Margin="0,0,0,20" FontSize="18">
+                <Paragraph Margin="0,0,0,16">
+                    <LineBreak />
+                    <Run>Here’s a complete list of everything it can do, with examples of possible messsages for each function.</Run>
+                </Paragraph>
+            </RichTextBlock>
+
+            <!--  General Capabilities  -->
+            <StackPanel Margin="0,0,0,40">
+                <TextBlock
+                    Margin="0,0,0,16"
+                    FontSize="18"
+                    FontWeight="SemiBold">
+                    General:
+                </TextBlock>
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="2*" />
+                        <ColumnDefinition Width="3*" />
+                    </Grid.ColumnDefinitions>
+                    <!--  Row 1  -->
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="Auto" />
+                    </Grid.RowDefinitions>
+                    <TextBlock
+                        Grid.Row="0"
+                        Grid.Column="0"
+                        Margin="0,0,10,14"
+                        FontSize="16"
+                        Text="• Look at any document and tell you its properties, including the author, description, keywords, and word count"
+                        TextWrapping="Wrap" />
+                    <TextBlock
+                        Grid.Row="0"
+                        Grid.Column="1"
+                        Margin="0,0,0,14"
+                        VerticalAlignment="Center"
+                        FontSize="16"
+                        FontStyle="Italic"
+                        Foreground="{ThemeResource HelpItalicsBrush}"
+                        Text="e.g. &quot;Can you tell me the properties of the ‘True story’ document?&quot;"
+                        TextWrapping="Wrap" />
+                    <!--  Row 2  -->
+                    <TextBlock
+                        Grid.Row="1"
+                        Grid.Column="0"
+                        Margin="0,0,10,14"
+                        FontSize="16"
+                        Text="• Show you a list of all of your documents"
+                        TextWrapping="Wrap" />
+                    <TextBlock
+                        Grid.Row="1"
+                        Grid.Column="1"
+                        Margin="0,0,0,14"
+                        FontSize="16"
+                        FontStyle="Italic"
+                        Foreground="{ThemeResource HelpItalicsBrush}"
+                        Text="e.g. &quot;Can you list all of the available documents?&quot;"
+                        TextWrapping="Wrap" />
+                    <!--  Row 3  -->
+                    <TextBlock
+                        Grid.Row="2"
+                        Grid.Column="0"
+                        Margin="0,0,10,0"
+                        FontSize="16"
+                        Text="• Make a copy of a document"
+                        TextWrapping="Wrap" />
+                    <TextBlock
+                        Grid.Row="2"
+                        Grid.Column="1"
+                        FontSize="16"
+                        FontStyle="Italic"
+                        Foreground="{ThemeResource HelpItalicsBrush}"
+                        Text="e.g. &quot;Can you make a copy of the Sales Pitch document?&quot;"
+                        TextWrapping="Wrap" />
+                </Grid>
+            </StackPanel>
+
+
+            <!--  Writer Capabilities  -->
+            <StackPanel Margin="0,0,0,40">
+                <TextBlock
+                    Margin="0,0,0,16"
+                    FontSize="18"
+                    FontWeight="SemiBold">
+                    Using Writer for text documents:
+                </TextBlock>
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="2*" />
+                        <ColumnDefinition Width="3*" />
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="Auto" />
+                    </Grid.RowDefinitions>
+                    <!--  Row 1  -->
+                    <TextBlock
+                        Grid.Row="0"
+                        Grid.Column="0"
+                        Margin="0,0,10,14"
+                        VerticalAlignment="Center"
+                        FontSize="16"
+                        Text="• Create a new document"
+                        TextWrapping="Wrap" />
+                    <TextBlock
+                        Grid.Row="0"
+                        Grid.Column="1"
+                        Margin="0,0,0,14"
+                        VerticalAlignment="Center"
+                        FontSize="16"
+                        FontStyle="Italic"
+                        Foreground="{ThemeResource HelpItalicsBrush}"
+                        Text="e.g. &quot;Can you make a new document called ‘Board Meeting’?&quot;"
+                        TextWrapping="Wrap" />
+                    <!--  Row 2  -->
+                    <TextBlock
+                        Grid.Row="1"
+                        Grid.Column="0"
+                        Margin="0,0,10,14"
+                        VerticalAlignment="Center"
+                        FontSize="16"
+                        Text="• Read the contents of a document"
+                        TextWrapping="Wrap" />
+                    <TextBlock
+                        Grid.Row="1"
+                        Grid.Column="1"
+                        Margin="0,0,0,14"
+                        VerticalAlignment="Center"
+                        FontSize="16"
+                        FontStyle="Italic"
+                        Foreground="{ThemeResource HelpItalicsBrush}"
+                        Text="e.g. &quot;Can you give me a summary of the Meeting Notes document?&quot;"
+                        TextWrapping="Wrap" />
+                    <!--  Row 3  -->
+                    <TextBlock
+                        Grid.Row="2"
+                        Grid.Column="0"
+                        Margin="0,0,10,14"
+                        VerticalAlignment="Center"
+                        FontSize="16"
+                        Text="• Add text"
+                        TextWrapping="Wrap" />
+                    <TextBlock
+                        Grid.Row="2"
+                        Grid.Column="1"
+                        Margin="0,0,0,14"
+                        VerticalAlignment="Center"
+                        FontSize="16"
+                        FontStyle="Italic"
+                        Foreground="{ThemeResource HelpItalicsBrush}"
+                        Text="e.g. &quot;Can you add the sentence ‘All is fair in love and war’ to the quotes document?&quot;"
+                        TextWrapping="Wrap" />
+                    <!--  Row 4  -->
+                    <TextBlock
+                        Grid.Row="3"
+                        Grid.Column="0"
+                        Margin="0,0,10,14"
+                        VerticalAlignment="Center"
+                        FontSize="16"
+                        Text="• Add headings"
+                        TextWrapping="Wrap" />
+                    <TextBlock
+                        Grid.Row="3"
+                        Grid.Column="1"
+                        Margin="0,0,0,14"
+                        VerticalAlignment="Center"
+                        FontSize="16"
+                        FontStyle="Italic"
+                        Foreground="{ThemeResource HelpItalicsBrush}"
+                        Text="e.g. &quot;Can you add a new heading, ‘How I found my true self’, to the Meditation document?&quot;"
+                        TextWrapping="Wrap" />
+                    <!--  Row 5  -->
+                    <TextBlock
+                        Grid.Row="4"
+                        Grid.Column="0"
+                        Margin="0,0,10,14"
+                        VerticalAlignment="Center"
+                        FontSize="16"
+                        Text="• Add paragraphs"
+                        TextWrapping="Wrap" />
+                    <TextBlock
+                        Grid.Row="4"
+                        Grid.Column="1"
+                        Margin="0,0,0,14"
+                        VerticalAlignment="Center"
+                        FontSize="16"
+                        FontStyle="Italic"
+                        Foreground="{ThemeResource HelpItalicsBrush}"
+                        Text="e.g. &quot;Can you add a paragraph about dogs to the animals document?&quot;"
+                        TextWrapping="Wrap" />
+                    <!--  Row 6  -->
+                    <TextBlock
+                        Grid.Row="5"
+                        Grid.Column="0"
+                        Margin="0,0,10,14"
+                        VerticalAlignment="Center"
+                        FontSize="16"
+                        Text="• Add tables"
+                        TextWrapping="Wrap" />
+                    <TextBlock
+                        Grid.Row="5"
+                        Grid.Column="1"
+                        Margin="0,0,0,14"
+                        VerticalAlignment="Center"
+                        FontSize="16"
+                        FontStyle="Italic"
+                        Foreground="{ThemeResource HelpItalicsBrush}"
+                        Text="e.g. &quot;Can you add a table about the pros and cons of capitalism?&quot;"
+                        TextWrapping="Wrap" />
+                    <!--  Row 7  -->
+                    <TextBlock
+                        Grid.Row="6"
+                        Grid.Column="0"
+                        Margin="0,0,10,14"
+                        VerticalAlignment="Center"
+                        FontSize="16"
+                        Text="• Insert page breaks"
+                        TextWrapping="Wrap" />
+                    <TextBlock
+                        Grid.Row="6"
+                        Grid.Column="1"
+                        Margin="0,0,0,14"
+                        VerticalAlignment="Center"
+                        FontSize="16"
+                        FontStyle="Italic"
+                        Foreground="{ThemeResource HelpItalicsBrush}"
+                        Text="e.g. &quot;Insert a page break at the end of the Freedom document&quot;"
+                        TextWrapping="Wrap" />
+                    <!--  Row 8  -->
+                    <TextBlock
+                        Grid.Row="7"
+                        Grid.Column="0"
+                        Margin="0,0,10,14"
+                        VerticalAlignment="Center"
+                        FontSize="16"
+                        Text="• Format text"
+                        TextWrapping="Wrap" />
+                    <TextBlock
+                        Grid.Row="7"
+                        Grid.Column="1"
+                        Margin="0,0,0,14"
+                        VerticalAlignment="Center"
+                        FontSize="16"
+                        FontStyle="Italic"
+                        Foreground="{ThemeResource HelpItalicsBrush}"
+                        Text="e.g. &quot;Please use a bigger font for the text ‘Things can only get better’ – make it green and use the Georgia font&quot;"
+                        TextWrapping="Wrap" />
+                    <!--  Row 9  -->
+                    <TextBlock
+                        Grid.Row="8"
+                        Grid.Column="0"
+                        Margin="0,0,10,14"
+                        VerticalAlignment="Center"
+                        FontSize="16"
+                        Text="• Find and replace text"
+                        TextWrapping="Wrap" />
+                    <TextBlock
+                        Grid.Row="8"
+                        Grid.Column="1"
+                        Margin="0,0,0,14"
+                        VerticalAlignment="Center"
+                        FontSize="16"
+                        FontStyle="Italic"
+                        Foreground="{ThemeResource HelpItalicsBrush}"
+                        Text="e.g. &quot;Can you replace the phrase ‘We shouldn’t speak any more’ with ‘You know where to find me’&quot;"
+                        TextWrapping="Wrap" />
+                    <!--  Row 10  -->
+                    <TextBlock
+                        Grid.Row="9"
+                        Grid.Column="0"
+                        Margin="0,0,10,14"
+                        VerticalAlignment="Center"
+                        FontSize="16"
+                        Text="• Delete specific text"
+                        TextWrapping="Wrap" />
+                    <TextBlock
+                        Grid.Row="9"
+                        Grid.Column="1"
+                        Margin="0,0,0,14"
+                        VerticalAlignment="Center"
+                        FontSize="16"
+                        FontStyle="Italic"
+                        Foreground="{ThemeResource HelpItalicsBrush}"
+                        Text="e.g. &quot;Please delete ‘The time has come’ from the proposal document&quot;"
+                        TextWrapping="Wrap" />
+                    <!--  Row 11  -->
+                    <TextBlock
+                        Grid.Row="10"
+                        Grid.Column="0"
+                        Margin="0,0,10,14"
+                        VerticalAlignment="Center"
+                        FontSize="16"
+                        Text="• Format a table"
+                        TextWrapping="Wrap" />
+                    <TextBlock
+                        Grid.Row="10"
+                        Grid.Column="1"
+                        Margin="0,0,0,14"
+                        VerticalAlignment="Center"
+                        FontSize="16"
+                        FontStyle="Italic"
+                        Foreground="{ThemeResource HelpItalicsBrush}"
+                        Text="e.g. &quot;Please give a header row and thicker borders to the second table in the ‘Product Review’ document&quot;"
+                        TextWrapping="Wrap" />
+                    <!--  Row 12  -->
+                    <TextBlock
+                        Grid.Row="11"
+                        Grid.Column="0"
+                        Margin="0,0,10,14"
+                        VerticalAlignment="Center"
+                        FontSize="16"
+                        Text="• Delete paragraphs"
+                        TextWrapping="Wrap" />
+                    <TextBlock
+                        Grid.Row="11"
+                        Grid.Column="1"
+                        Margin="0,0,0,14"
+                        VerticalAlignment="Center"
+                        FontSize="16"
+                        FontStyle="Italic"
+                        Foreground="{ThemeResource HelpItalicsBrush}"
+                        Text="e.g. &quot;Delete the first paragraph in the ‘Bird Species’ document&quot;"
+                        TextWrapping="Wrap" />
+                    <!--  Row 13  -->
+                    <TextBlock
+                        Grid.Row="12"
+                        Grid.Column="0"
+                        Margin="0,0,10,14"
+                        VerticalAlignment="Center"
+                        FontSize="16"
+                        Text="• Apply styling to the whole document"
+                        TextWrapping="Wrap" />
+                    <TextBlock
+                        Grid.Row="12"
+                        Grid.Column="1"
+                        Margin="0,0,0,14"
+                        VerticalAlignment="Center"
+                        FontSize="16"
+                        FontStyle="Italic"
+                        Foreground="{ThemeResource HelpItalicsBrush}"
+                        Text="e.g. &quot;Please give the ‘Party invitation’ document fun styling, with big colourful text&quot;"
+                        TextWrapping="Wrap" />
+                    <!--  Row 14  -->
+                    <TextBlock
+                        Grid.Row="13"
+                        Grid.Column="0"
+                        Margin="0,0,10,0"
+                        VerticalAlignment="Center"
+                        FontSize="16"
+                        Text="• Insert images"
+                        TextWrapping="Wrap" />
+                    <TextBlock
+                        Grid.Row="13"
+                        Grid.Column="1"
+                        Margin="0,0,0,0"
+                        VerticalAlignment="Center"
+                        FontSize="16"
+                        FontStyle="Italic"
+                        Foreground="{ThemeResource HelpItalicsBrush}"
+                        Text="e.g. &quot;Please insert the following image into the ‘Animals’ document: C:\Users\username\Downloads\monkey.png&quot;"
+                        TextWrapping="Wrap" />
+                </Grid>
+            </StackPanel>
+
+            <!--  Impress Capabilities  -->
+            <StackPanel Margin="0,0,0,20">
+                <TextBlock
+                    Margin="0,0,0,16"
+                    FontSize="18"
+                    FontWeight="SemiBold">
+                    Using Impress for presentations:
+                </TextBlock>
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="2*" />
+                        <ColumnDefinition Width="3*" />
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="Auto" />
+                    </Grid.RowDefinitions>
+                    <!--  Row 1  -->
+                    <TextBlock
+                        Grid.Row="0"
+                        Grid.Column="0"
+                        Margin="0,0,10,14"
+                        VerticalAlignment="Center"
+                        FontSize="16"
+                        Text="• Create a new presentation"
+                        TextWrapping="Wrap" />
+                    <TextBlock
+                        Grid.Row="0"
+                        Grid.Column="1"
+                        Margin="0,0,0,14"
+                        VerticalAlignment="Center"
+                        FontSize="16"
+                        FontStyle="Italic"
+                        Foreground="{ThemeResource HelpItalicsBrush}"
+                        Text="e.g. &quot;Can you create me a presentation called ‘Business Proposal’?&quot;"
+                        TextWrapping="Wrap" />
+                    <!--  Row 2  -->
+                    <TextBlock
+                        Grid.Row="1"
+                        Grid.Column="0"
+                        Margin="0,0,10,14"
+                        VerticalAlignment="Center"
+                        FontSize="16"
+                        Text="• Read the contents of a presentation"
+                        TextWrapping="Wrap" />
+                    <TextBlock
+                        Grid.Row="1"
+                        Grid.Column="1"
+                        Margin="0,0,0,14"
+                        VerticalAlignment="Center"
+                        FontSize="16"
+                        FontStyle="Italic"
+                        Foreground="{ThemeResource HelpItalicsBrush}"
+                        Text="e.g. &quot;Can you give me a summary of the ‘Team Agenda’ presentation?&quot;"
+                        TextWrapping="Wrap" />
+                    <!--  Row 3  -->
+                    <TextBlock
+                        Grid.Row="2"
+                        Grid.Column="0"
+                        Margin="0,0,10,14"
+                        VerticalAlignment="Center"
+                        FontSize="16"
+                        Text="• Add a slide with a title and content"
+                        TextWrapping="Wrap" />
+                    <TextBlock
+                        Grid.Row="2"
+                        Grid.Column="1"
+                        Margin="0,0,0,14"
+                        VerticalAlignment="Center"
+                        FontSize="16"
+                        FontStyle="Italic"
+                        Foreground="{ThemeResource HelpItalicsBrush}"
+                        Text="e.g. &quot;Can you add a slide about AI training to the Onboarding presentation?&quot;"
+                        TextWrapping="Wrap" />
+                    <!--  Row 4  -->
+                    <TextBlock
+                        Grid.Row="3"
+                        Grid.Column="0"
+                        Margin="0,0,10,14"
+                        VerticalAlignment="Center"
+                        FontSize="16"
+                        Text="• Change the title of a slide"
+                        TextWrapping="Wrap" />
+                    <TextBlock
+                        Grid.Row="3"
+                        Grid.Column="1"
+                        Margin="0,0,0,14"
+                        VerticalAlignment="Center"
+                        FontSize="16"
+                        FontStyle="Italic"
+                        Foreground="{ThemeResource HelpItalicsBrush}"
+                        Text="e.g. &quot;Can you change the title of the second slide to ‘Supporting other team members’?&quot;"
+                        TextWrapping="Wrap" />
+                    <!--  Row 5  -->
+                    <TextBlock
+                        Grid.Row="4"
+                        Grid.Column="0"
+                        Margin="0,0,10,14"
+                        VerticalAlignment="Center"
+                        FontSize="16"
+                        Text="• Change the content of a slide"
+                        TextWrapping="Wrap" />
+                    <TextBlock
+                        Grid.Row="4"
+                        Grid.Column="1"
+                        Margin="0,0,0,14"
+                        VerticalAlignment="Center"
+                        FontSize="16"
+                        FontStyle="Italic"
+                        Foreground="{ThemeResource HelpItalicsBrush}"
+                        Text="e.g. &quot;Can you change the content of the second slide to a list of how to support other members of your team?&quot;"
+                        TextWrapping="Wrap" />
+                    <!--  Row 6  -->
+                    <TextBlock
+                        Grid.Row="5"
+                        Grid.Column="0"
+                        Margin="0,0,10,14"
+                        VerticalAlignment="Center"
+                        FontSize="16"
+                        Text="• Delete a slide"
+                        TextWrapping="Wrap" />
+                    <TextBlock
+                        Grid.Row="5"
+                        Grid.Column="1"
+                        Margin="0,0,0,14"
+                        VerticalAlignment="Center"
+                        FontSize="16"
+                        FontStyle="Italic"
+                        Foreground="{ThemeResource HelpItalicsBrush}"
+                        Text="e.g. &quot;Delete the fourth slide&quot;"
+                        TextWrapping="Wrap" />
+                    <!--  Row 7  -->
+                    <TextBlock
+                        Grid.Row="6"
+                        Grid.Column="0"
+                        Margin="0,0,10,14"
+                        VerticalAlignment="Center"
+                        FontSize="16"
+                        Text="• Apply a template to a whole presentation"
+                        TextWrapping="Wrap" />
+                    <TextBlock
+                        Grid.Row="6"
+                        Grid.Column="1"
+                        Margin="0,0,0,14"
+                        VerticalAlignment="Center"
+                        FontSize="16"
+                        FontStyle="Italic"
+                        Foreground="{ThemeResource HelpItalicsBrush}"
+                        Text="e.g. &quot;Please apply the Blue Curve template to the Lesson Plan presentation&quot;"
+                        TextWrapping="Wrap" />
+                    <!--  Row 8  -->
+                    <TextBlock
+                        Grid.Row="7"
+                        Grid.Column="0"
+                        Margin="0,0,10,14"
+                        VerticalAlignment="Center"
+                        FontSize="16"
+                        Text="• Format a slide title"
+                        TextWrapping="Wrap" />
+                    <TextBlock
+                        Grid.Row="7"
+                        Grid.Column="1"
+                        Margin="0,0,0,14"
+                        VerticalAlignment="Center"
+                        FontSize="16"
+                        FontStyle="Italic"
+                        Foreground="{ThemeResource HelpItalicsBrush}"
+                        Text="e.g. &quot;Please make the title of the first slide bold, blue and centred&quot;"
+                        TextWrapping="Wrap" />
+                    <!--  Row 9  -->
+                    <TextBlock
+                        Grid.Row="8"
+                        Grid.Column="0"
+                        Margin="0,0,10,14"
+                        VerticalAlignment="Center"
+                        FontSize="16"
+                        Text="• Format the content of a slide"
+                        TextWrapping="Wrap" />
+                    <TextBlock
+                        Grid.Row="8"
+                        Grid.Column="1"
+                        Margin="0,0,0,14"
+                        VerticalAlignment="Center"
+                        FontSize="16"
+                        FontStyle="Italic"
+                        Foreground="{ThemeResource HelpItalicsBrush}"
+                        Text="e.g. &quot;Please make the content of the first slide smaller and in italics, with a light blue background&quot;"
+                        TextWrapping="Wrap" />
+                    <!--  Row 10  -->
+                    <TextBlock
+                        Grid.Row="9"
+                        Grid.Column="0"
+                        Margin="0,0,10,14"
+                        VerticalAlignment="Center"
+                        FontSize="16"
+                        Text="• Insert an image into a slide"
+                        TextWrapping="Wrap" />
+                    <TextBlock
+                        Grid.Row="9"
+                        Grid.Column="1"
+                        Margin="0,0,0,14"
+                        VerticalAlignment="Center"
+                        FontSize="16"
+                        FontStyle="Italic"
+                        Foreground="{ThemeResource HelpItalicsBrush}"
+                        Text="e.g. &quot;Please insert this image into the 5th slide of the ‘Roadmap’ presentation: C:\Users\username\Pictures\roadmap_diagram.jpeg&quot;"
+                        TextWrapping="Wrap" />
+                    <!--  Row 11: Note  -->
+                    <TextBlock
+                        Grid.Row="10"
+                        Grid.Column="0"
+                        Grid.ColumnSpan="2"
+                        Margin="0,8,0,0"
+                        FontSize="16"
+                        Foreground="{ThemeResource HelpItalicsBrush}"
+                        Text="Note: When working with presentations, the AI assistant is limited to a simple slide layout with a title and content textbox. For more sophisticated layouts, you will need to make changes directly in Impress."
+                        TextWrapping="Wrap" />
+                </Grid>
+            </StackPanel>
+
+            <RichTextBlock Margin="0,0,0,10" FontSize="18">
+                <Paragraph Margin="0,0,0,16">
+                    <Run>
+                        The AI assistant cannot do everything! For anything not listed, or for more specific options, it is recommended to open LibreOffice and make the changes yourself.
+                    </Run>
+                </Paragraph>
+            </RichTextBlock>
+            <!--  Images  -->
+            <RichTextBlock Margin="0,0,0,10" FontSize="18">
+                <Paragraph Margin="0,0,0,16" FontWeight="SemiBold">
+                    <LineBreak />
+                    <Run>Images:</Run>
+                </Paragraph>
+                <Paragraph Margin="0,0,0,16">
+                    <Run>
+                        For images, you need to tell the AI the exact path of the image you want to use.
+                        For example, if the image was on your desktop, you should put: “C:\Users\username\Desktop\image.jpeg” within the message.
+                    </Run>
+                </Paragraph>
+            </RichTextBlock>
+
+
+            <!--  Templates  -->
+            <RichTextBlock Margin="0,0,0,10" FontSize="18">
+                <Paragraph Margin="0,0,0,16" FontWeight="SemiBold">
+                    <LineBreak />
+                    <Run>Presentation Templates:</Run>
+                </Paragraph>
+                <Paragraph Margin="0,0,0,16">
+                    <Run>
+                        The assistant can use any presentation templates you have set up in Impress. It will look for available templates in the default locations – if you want it to search in additional locations, you can configure this in Settings.
+                    </Run>
+                </Paragraph>
+            </RichTextBlock>
+
+
+            <!--  Documents  -->
+            <RichTextBlock Margin="0,0,0,10" FontSize="18">
+                <Paragraph Margin="0,0,0,16" FontWeight="SemiBold">
+                    <LineBreak />
+                    <Run>Documents:</Run>
+                </Paragraph>
+                <Paragraph Margin="0,0,0,16">
+                    <Run>The application will use your default Documents folder when searching for files and saving new documents. You can set this to a different folder in Settings.</Run>
+                </Paragraph>
+                <Paragraph Margin="0,0,0,16">
+                    <Run>The assistant knows the contents of your documents folder, so you don’t have to give the exact name of documents as long as it’s easy to tell which one you’re referring to.</Run>
+                    <Run>Once you've started working on a document, the assistant will know you're editing it, so you don't need to specify the document name, unless there are multiple documents you're using.</Run>
+                </Paragraph>
+                <Paragraph Margin="0,0,0,16">
+                    <Run>Documents cannot be open in LibreOffice while the AI Assistant is using them.</Run>
+                </Paragraph>
+                <Paragraph Margin="0,0,0,16">
+                    <Run>As the application makes direct changes to your documents, you may want to create a copy before editing them with the AI assistant.</Run>
+                </Paragraph>
+            </RichTextBlock>
+
+            <!--  Voice Interface  -->
+            <RichTextBlock Margin="0,0,0,10" FontSize="18">
+                <Paragraph Margin="0,0,0,16" FontWeight="SemiBold">
+                    <LineBreak />
+                    <Run>Voice Interface:</Run>
+                </Paragraph>
+                <Paragraph Margin="0,0,0,16">
+                    <Run>Instead of typing, you can use the voice interface to send messages. Just click the microphone button to start recording, and press it again to stop recording. The application will transcribe your message into the chat box.</Run>
+                </Paragraph>
+                <Paragraph Margin="0,0,0,16">
+                    <Run>You can also use the keyboard – just press the spacebar to start and stop recording.</Run>
+                </Paragraph>
+            </RichTextBlock>
+
+            <!--  Prompting  -->
+            <RichTextBlock Margin="0,0,0,10" FontSize="18">
+                <Paragraph Margin="0,0,0,16" FontWeight="SemiBold">
+                    <LineBreak />
+                    <Run>Prompting the AI:</Run>
+                </Paragraph>
+                <Paragraph Margin="0,0,0,16">
+                    <Run>Be as detailed as you can with your requests, so that the AI knows exactly what you want.</Run>
+                </Paragraph>
+
+
+                <Paragraph Margin="0,0,0,16">
+                    <Run>If you want the AI to generate lots of content, it is a good idea to ask it to do this first, before putting it into a document.</Run>
+                </Paragraph>
+                <Paragraph Margin="20,8,0,16">
+                    <Run FontSize="16" FontStyle="Italic">
+                        First ask: “Can you give me a detailed explanation of the French Revolution?”
+                    </Run>
+                    <LineBreak />
+                    <Run FontSize="16" FontStyle="Italic">
+                        Then: “Thanks! Can you save that in a document called ‘History of the French Revolution”?
+                    </Run>
+                </Paragraph>
+
+                <Paragraph Margin="0,0,0,16">
+                    <Run>If the conversation gets too long, the AI assistant may start to forget everything you’ve talked about. If you’re starting a new task, it’s recommended to start a new chat with the button at the top of the screen.</Run>
+                </Paragraph>
+            </RichTextBlock>
+
+            <!--  AI Models  -->
+            <RichTextBlock Margin="0,0,0,10" FontSize="18">
+                <Paragraph Margin="0,0,0,16" FontWeight="SemiBold">
+                    <LineBreak />
+                    <Run>AI Models:</Run>
+                </Paragraph>
+                <Paragraph Margin="0,0,0,16">
+                    <Run>
+                        It is possible to change the AI model the app is using. This can be configured on the Settings page by typing a different model name into settings and clicking 'Save Changes'.
+                    </Run>
+                </Paragraph>
+                <Paragraph Margin="0,0,0,16">
+                    <Run>
+                        You can use any model hosted by Ollama that supports tool calling - find models
+                    </Run>
+                    <Hyperlink Click="OnLinkClick" NavigateUri="https://ollama.com/search?c=tools">
+                        <Run Text="here" />
+                    </Hyperlink>
+                    <Run>
+                        . Please note changing the AI model may have a significant effect on performance. You should not change this setting unless you are confident your hardware is sufficiently powerful.
+                    </Run>
+                </Paragraph>
+            </RichTextBlock>
+
+            <!--  AI Output  -->
+            <RichTextBlock Margin="0,0,0,10" FontSize="18">
+                <Paragraph Margin="0,0,0,16" FontWeight="SemiBold">
+                    <LineBreak />
+                    <Run>AI Output:</Run>
+                </Paragraph>
+                <Paragraph Margin="0,0,0,16">
+                    <Run>
+                        The AI assistant runs without using your internet – this means it cannot verify any information online, and it will not always be up to date. You should always check for any mistakes in its output.
+                    </Run>
+                </Paragraph>
+            </RichTextBlock>
+
+        </StackPanel>
+    </DataTemplate>
+
+    <DataTemplate x:Key="AboutContentTemplate">
+        <Grid Padding="40,0,80,40">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="*" />
+                <RowDefinition Height="Auto" />
+            </Grid.RowDefinitions>
+            <RichTextBlock Grid.Row="0" FontSize="16">
+                <Paragraph Margin="0,0,0,16">
+                    <Run>This application enables AI for LibreOffice.</Run>
+                </Paragraph>
+                <Paragraph Margin="0,0,0,16">
+                    <Run>It was developed by Ben Thompson as part of the SmolPC collection for Intel, for the UCL Industry Exchange Network (IXN).</Run>
+                </Paragraph>
+                <Paragraph Margin="0,0,0,16">
+                    <Run>Supervised by:</Run>
+                </Paragraph>
+                <Paragraph Margin="0,0,0,16">
+                    <Run>Professor Graham Roberts &amp; Professor Dean Mohamedally</Run>
+                </Paragraph>
+                <Paragraph Margin="0,0,0,16">
+                    <Run>Version 1.0</Run>
+                </Paragraph>
+                <Paragraph Margin="0,0,0,16">
+                    <Run>September 2025</Run>
+                </Paragraph>
+                <Paragraph Margin="0,0,0,16">
+                    <Run>Email:</Run>
+                    <Hyperlink NavigateUri="mailto:ucl.ixn@ucl.ac.uk">
+                        <Run Text="ucl.ixn@ucl.ac.uk" />
+                    </Hyperlink>
+                </Paragraph>
+                <Paragraph Margin="0,0,0,16">
+                    <Run>URL:</Run>
+                    <Hyperlink Click="OnLinkClick" NavigateUri="https://www.ucl.ac.uk/engineering/computer-science/collaborate/ucl-industry-exchange-network-ucl-ixn">
+                        <Run Text="UCL Industry Exchange Network" />
+                    </Hyperlink>
+                </Paragraph>
+            </RichTextBlock>
+
+            <Grid
+                Grid.Row="2"
+                Margin="50,100,50,100"
+                VerticalAlignment="Bottom">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="2*" />
+                    <ColumnDefinition Width="1*" />
+                    <ColumnDefinition Width="2*" />
+                </Grid.ColumnDefinitions>
+                <Border
+                    Grid.Column="0"
+                    Padding="10"
+                    Background="White">
+                    <Image Height="60" Source="/Assets/ucl_logo.svg" />
+                </Border>
+                <Image
+                    Grid.Column="2"
+                    Height="60"
+                    Source="/Assets/intel_logo.png" />
+            </Grid>
+
+        </Grid>
+    </DataTemplate>
+
+</ResourceDictionary>
