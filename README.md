@@ -11,7 +11,10 @@ LibreOffice integration adapted from [libre-office-mcp](https://github.com/bthom
 
 University College London
 - Mathias Tidball
-- 
+- Stefanos Ioannidis
+- Siddhant Murugkar
+- Rabiyah Mon
+- Aishah Mohammed
 
 ## Partners
 
